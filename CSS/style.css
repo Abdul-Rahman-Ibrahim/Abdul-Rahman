@@ -1,0 +1,597 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+:root{
+    /* ===== color ====  */
+    --body-color:  #fff;
+    --text-color: #0a0c18;
+    --header-color: #0b51f3;
+    --input-color: #ede9f7;
+    --link-color: #f5f5f5;
+    --button-color: #3e74f1;
+
+    /* ===== transition =====  */
+    --trans-03: all 0.3s ease-in;
+    --trans-04: all 0.5s ease-out;
+
+    /* ====== box shadow =====  */
+    --shadow1: -3px -3px 1px #ffffff73, 3px 3px 5px rgba(5,79,207, .288);
+    --shadow2: rgb(204,219,322, 0.5) 3px 3px 6px 0, rgba(255,255,255,0.1) -3px 6px 9px;
+    --shadow3: 0 0 17px #ffffff, 0 3px 7px #959596e8;
+
+    /* ===== border-radius =====  */
+    --input: 5px;                                                   
+    --body: 9px;
+}
+body{
+    width: 100%;
+    background: var(--body-color);
+    position: relative;
+}
+body::-webkit-scrollbar{
+    width: 1rem;
+}
+body::-webkit-scrollbar-track{
+    background: var(--input-color);
+}
+body::-webkit-scrollbar-thumb{
+    background: var(--text-color);
+    border: 6px solid transparent;
+    background-clip: content-box;
+    border-radius: 40px;
+}
+body::-webkit-scrollbar-thumb:hover{
+    border: 5px solid transparent;
+}
+nav{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4.5vw;
+    position: fixed;
+    padding: 0.6vw 2vw;
+    background: var(--body-color);
+    box-shadow: var(--shadow1);
+    z-index: 100;
+}
+nav .nav-links{
+    display: grid;
+    grid-template-columns: 2fr 1.4fr 0.2fr;
+}
+nav.sticky{
+    background: var(--link-color);
+}
+.nav-links .profile{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+.nav-links .profile img{
+    width: 3.4vw;
+    height: 3vw;
+    border-radius: 50%;
+}
+.nav-links .profile h1{
+    font-size: 1.6vw;
+    color: var(--text-color);
+    text-transform: capitalize;
+}
+nav .menu{
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+}
+nav .nav-links .menu li{
+    list-style: none;
+    position: relative;
+}
+nav .nav-links .menu li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.3vw;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--trans-03);
+}
+nav .nav-links .menu li:hover{
+    transform: scale(1.1);
+}
+nav .nav-links  .menu .active{
+    color: var(--header-color);
+}
+nav .nav-links i{
+    display: none;
+}
+
+header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8vw;
+    color: var(--header-color);
+}
+
+/* ==== home ====  */
+section.home{
+    width: 100%;
+    height: 50vw;
+    padding: 8vw;
+}
+.home .home-content{
+    display: flex;
+    gap: 5vw;
+}
+.home .home-content .content-left{
+    flex-basis: 60vw;
+    padding: 9vw 0 ;
+}
+.home .home-content .content-left h1{
+    text-transform: capitalize;
+    color: var(--text-color);
+    font-size: 2.4vw;
+}
+.home .home-content .content-left p{
+    text-align: justify; 
+    line-height: 1.5em;
+    margin: 1vw 0 2vw;
+    width: 39.5vw;
+    font-size: 1.3vw;
+}
+.home .home-content .content-left .connect .fa-brands{
+    font-size: 2vw;
+    background: var(--text-color);
+    color: var(--link-color);
+    padding: 0.8vw 0.92vw;
+    border-radius: 50%;
+}
+.home .home-content .content-left .connect .fa-brands.fa-linkedin{
+    background: var(--header-color);
+}
+.home .home-content .content-left .button{
+    margin: 3vw 0;
+}
+.home .home-content .content-left .button a{
+    display: inline-block;
+    background: var(--button-color);
+    padding: 0.6vw;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--input-color);
+    border-radius: var(--input);
+    font-size: 1.2vw;
+    cursor: pointer;
+    transition: var(--trans-03);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.home .home-content .content-left .button a::before{
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: var(--trans-03);
+}
+.home .home-content .content-left .button a:hover::before{
+    background: var(--text-color);
+    width: 100%;
+}
+.home .home-content .content-right{
+    flex-basis: 4vw;
+    padding: 3vw;
+}
+.home .home-content .content-right img{
+    object-fit: contain;
+    width: 24vw;
+}
+
+/* ====== about =======  */
+section.about{
+    width: 100%;
+    height: 50vw;
+    padding: 6vw 8vw;
+}
+.about .about-content{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4vw;
+    padding: 2vw;
+}
+.about .about-content .content-left img{
+    width: 23vw;
+    height: 23vw;
+    object-fit: cover;
+}
+.about .about-content .content-right p{
+    line-height: 1.9vw;
+    text-align: justify;
+    color: var(--text-color);
+    font-size: 1.24vw;
+}
+
+
+/* ===== research ======  */
+section.research{
+    width: 100%;
+    height: 50vw;
+    padding: 6vw 8vw;
+}
+
+
+/* ===== contact ======  */
+section.contact{
+    width: 100%;
+    height: 50vw;
+    padding: 6vw 8vw;
+}
+.contact form .form-group{
+    margin: 1vw 28vw;
+    padding: 1.3vw;
+    box-shadow: var(--shadow3);
+    border-radius: var(--body);
+}
+.contact form .form-group .form-input{
+    display: flex;
+    flex-direction: column;
+}
+.contact form .form-group .form-input label{
+    text-transform: capitalize;
+    padding: 0.6vw 0;
+    color: var(--text-color);
+    font-size: 1.2vw;
+}
+.contact form .form-group .form-input input, textarea{
+    padding: 1vw;
+    border-radius: var(--input);
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2vw;
+    border: 0.2vw solid var(--input-color);
+}
+.contact form .form-group .form-input input:focus, textarea:focus{
+    border-color: green;
+}
+.contact form .form-group .button{
+    display: grid;
+    place-items: center;
+    margin: 1vw 0 0.5vw;
+}
+.contact form .form-group .button input{
+    padding: 0.7vw 2vw;
+    text-transform: capitalize;
+    font-size: 1.3vw;
+    border-radius: var(--input);
+    border: none;
+    cursor: pointer;
+    color: var(--input-color);
+    background: var(--button-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.contact form .form-group .button input::before{
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: var(--trans-03);
+}
+.contact form .form-group .button input:hover::before{
+    width: 100%;
+    background: var(--text-color);
+}
+
+/* ======= footer ======  */
+footer .copy{
+    background: var(--input-color);
+    height: 8vw;
+    padding: 3vw;
+}
+footer .copy .right{
+    text-align: center;
+    font-size: 1.3vw;
+    font-weight: 800;
+}
+.back{
+    bottom: -100vw;
+    right: 3vw;
+    position: fixed;
+    transition: var(--trans-03);
+    z-index: 100;
+}
+.back .fa-solid{
+    background: var(--button-color);
+    padding: 0.8vw 1vw;
+    font-weight: bold;
+    font-size: 2vw;
+    color: var(--body-color);
+    border-radius: 50%;
+}
+.back-scroll{
+    bottom: 4vw;
+}
+
+/* ====== Responsive ======  */
+
+@media screen and (max-width: 768px) {
+    nav{
+        height: 6vw;
+        position: fixed;
+        padding: 1vw 2vw;
+    }
+    .nav-links .profile img{
+        width: 4.4vw;
+        height: 4vw;
+    }
+    .nav-links .profile h1{
+        font-size: 1.8vw;
+    }
+    nav .nav-links .menu li a{
+        font-size: 1.7vw;
+    }
+    header {
+        font-size: 2vw;
+    }
+    
+    section.home{
+        width: 100%;
+        height: 50vw;
+        padding: 8vw 3vw;
+    }
+    .home .home-content{
+        display: flex;
+        gap: 2vw;
+    }
+    .home .home-content .content-left{
+        flex-basis: 65vw;
+        padding: 9vw 0 ;
+    }
+    .home .home-content .content-left h1{
+        font-size: 2.9vw;
+    }
+    .home .home-content .content-left p{
+        font-size: 2.5vw;
+        width: 55vw;
+    }
+    .home .home-content .content-left .connect .fa-brands{
+        font-size: 2.4vw;
+    }
+    .home .home-content .content-left .button a{
+        padding: 0.8vw;
+        font-size: 1.6vw;
+    }
+    .home .home-content .content-right img{
+        object-fit: contain;
+        width: 24vw;
+    }
+    section.about{
+        height: 70vw;
+        padding: 6vw 4vw;
+    }
+    .about .about-content{
+        display: flex;
+       align-items: center;
+        gap: 4vw;
+        padding: 2vw;
+    }
+    .about .about-content .content-right p{
+        line-height: 3vw;
+        font-size: 1.9vw;
+    }
+    section.research{
+        height: 50vw;
+        padding: 6vw 8vw;
+    }
+    section.contact{
+        height: 70vw;
+        padding: 6vw 8vw;
+    }
+    .contact form .form-group{
+        margin: 1vw 22vw;
+        padding: 1.8vw;
+    }
+    .contact form .form-group .form-input label{
+        font-size: 2vw;
+    }
+    .contact form .form-group .form-input input, textarea{
+        padding: 1.4vw;
+        font-size: 1.8vw;
+        border: 0.3vw solid var(--input-color);
+    }
+    .contact form .form-group .button input{
+        padding: 0.9vw 2vw;
+        font-size: 1.7vw;
+    }
+    footer .copy .right{
+        font-size: 1.8vw;
+    }
+    .back .fa-solid{
+        font-size: 2.4vw;
+    }
+}
+
+@media screen and (max-width: 480px){  
+    nav{
+        height: 10vw;
+        position: fixed;
+        padding: 2vw 2.5vw;
+    }
+    nav .nav-links{
+        display: grid;
+        grid-template-columns: 7fr 0fr 0.5fr;
+    }
+    .nav-links .profile img{
+        width: 6vw;
+        height: 5.8vw;
+    }
+    .nav-links .profile h1{
+        font-size: 3vw;
+        color: var(--text-color);
+        text-transform: capitalize;
+    }
+    nav .nav-links .menu{
+        top: 100%;
+        right: -100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background: var(--body-color);
+        box-shadow: var(--shadow1);
+        align-items: flex-start;
+        padding: 2vw 4vw;
+        width: 100%;
+        z-index: 100;
+        transition: var(--trans-03);
+    }
+    nav .nav-links .menu.appear{
+        right: 0;
+    }
+    nav .nav-links .menu li a{
+        font-size: 3.3vw;
+        font-weight: 400;
+        color: var(--header-color);
+    }
+    nav .nav-links i{
+        display: block;
+        font-size: 5vw;
+        color: var(--text-color);
+        cursor: pointer;
+    }
+    
+    header {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 3.2vw;
+        color: var(--header-color);
+    }
+    section.home{
+        padding: 8vw 2vw;
+    }
+    .home .home-content{
+        gap: 0;
+    }
+    .home .home-content .content-left{
+        flex-basis: 75vw;
+    }
+    .home .home-content .content-left h1{
+        font-size: 3.4vw;
+    }
+    .home .home-content .content-left p{
+        text-align: left; 
+        line-height: 1.5em;
+        margin: 1vw 0 2vw;
+        width: 60vw;
+        font-size: 3vw;
+    }
+    .home .home-content .content-left .connect .fa-brands{
+        font-size: 4vw;
+        background: var(--text-color);
+        color: var(--link-color);
+        padding:  1.5vw;
+        border-radius: 50%;
+    }
+    
+    .home .home-content .content-left .button a{
+        padding: 1.5vw;
+        font-size: 2.5vw;
+    }
+    .home .home-content .content-right{
+        flex-basis: 10vw;
+        padding: 6vw 3vw;
+    }
+    .home .home-content .content-right img{
+        width: 25vw;
+    }
+    section.about{
+        width: 100%;
+        height: 170vw;
+        padding: 15vw 2vw;
+    }
+    .about .about-content{
+        display: flex;
+        flex-direction: column;
+        gap: 4vw;
+        padding: 2vw;
+    }
+    .about .about-content .content-left img{
+        width: 40vw;
+        height: 40vw;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .about .about-content .content-right p{
+        line-height: 4.8vw;
+        font-size: 3.24vw;
+    }
+    section.research{
+        width: 100%;
+        height: 50vw;
+        padding: 6vw 8vw;
+    }
+    section.contact{
+        width: 100%;
+        height: 100vw;
+        padding: 6vw 8vw;
+    }
+    .contact form .form-group{
+        margin: 1vw 10vw;
+        padding: 2vw;
+    }
+    .contact form .form-group .form-input label{
+        text-transform: capitalize;
+        padding: 1vw 0;
+        color: var(--text-color);
+        font-size: 3vw;
+    }
+    .contact form .form-group .form-input input, textarea{
+        padding: 2.3vw;
+        font-size: 2.2vw;
+    }
+    .contact form .form-group .button{
+        display: grid;
+        place-items: center;
+        margin: 1vw 0 0.5vw;
+    }
+    .contact form .form-group .button{
+        margin-top: 2vw;
+    }
+    .contact form .form-group .button input{
+        padding: 1vw 2vw;
+        text-transform: capitalize;
+        font-size: 3.3vw;
+    }
+    footer .copy{
+        background: var(--input-color);
+        height: 15vw;
+        padding: 6vw;
+    }
+    footer .copy .right{
+        text-align: center;
+        font-size: 2.5vw;
+        font-weight: 800;
+    }
+    .back{
+        bottom: -100vw;
+        right: 3vw;
+        position: fixed;
+        transition: var(--trans-03);
+        z-index: 100;
+    }
+    .back .fa-solid{
+        background: var(--button-color);
+        padding: 1.8vw 2vw;
+        font-weight: bold;
+        font-size: 4.5vw;
+    }
+    .back-scroll{
+        bottom: 6vw;
+    }
+}
