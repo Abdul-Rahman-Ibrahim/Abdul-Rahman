@@ -538,22 +538,22 @@ footer .copy .right{
     }
     section.contact{
         width: 100%;
-        height: 100vw;
+        height: 120vw;
         padding: 6vw 8vw;
     }
     .contact form .form-group{
-        margin: 1vw 10vw;
-        padding: 2vw;
+        margin: 1vw 4vw;
+        padding: 2vw 4vw;
     }
     .contact form .form-group .form-input label{
         text-transform: capitalize;
-        padding: 1vw 0;
+        padding: 1.5vw 0;
         color: var(--text-color);
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
     .contact form .form-group .form-input input, textarea{
-        padding: 2.3vw;
-        font-size: 2.2vw;
+        padding: 2.7vw;
+        font-size: 3.3vw;
     }
     .contact form .form-group .button{
         display: grid;
@@ -566,7 +566,7 @@ footer .copy .right{
     .contact form .form-group .button input{
         padding: 1vw 2vw;
         text-transform: capitalize;
-        font-size: 3.3vw;
+        font-size: 3.5vw;
     }
     footer .copy{
         background: var(--input-color);
