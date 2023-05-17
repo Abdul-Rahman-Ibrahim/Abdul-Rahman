@@ -60,7 +60,7 @@ document.getElementById('form')
       submit.value = 'Send';
       document.getElementById("name").value = "";
       document.getElementById("email").value = "";
-      document.getElementById("number").value = "";
+      document.getElementById("phone").value = "";
       document.getElementById("message").value = "";
     });
 });
